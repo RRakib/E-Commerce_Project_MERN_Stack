@@ -1,8 +1,16 @@
 const express = require("express");
+const key = require("./config/key");
 const mongoose = require("mongoose");
-const key = require("./config/key")
+const UserController = require("./Controller/userController")
 
 const app = express();
+
+// Applying Middleware
+app.use(express.urlencoded({extended : false}));
+app.use(express.json())
+
+// Assign Route
+app.use("/user" , UserController)
 
 // MongoDB connect
 mongoose.connect(key.mongoURI , {useNewUrlParser : true})
