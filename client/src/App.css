@@ -1,0 +1,23 @@
+.App {
+  display: grid;
+  text-align: center;
+  grid-template-columns: 6% 94%;
+}
+.navBar{
+  padding-top: 235%;
+  background: #29242f;
+}
+.navBar p{
+  margin: 25px 0;
+  letter-spacing: 1.5px;
+  transform: rotate(-90deg);
+}
+.navBar a{
+  color: #bbb;
+  font-size: 18px;
+  transition: .3s;
+  text-decoration: none;
+}
+.navBar p:hover a{
+  color: #fffb00;
+}

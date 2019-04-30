@@ -1,0 +1,37 @@
+::placeholder{
+    font-size: 14px;
+}
+.login input{
+    width: 25%;
+    height: 25px;
+    border: none;
+    outline: none;
+    background: none;
+    margin-bottom: 10px;
+    padding: 5px 0 5px 10px;
+    border-bottom: 2px solid #29242f;
+}
+.login button{
+    width: 26%;
+    border:none;
+    outline: none;
+    color: #eee;
+    transition: .3s;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 2px;
+    background: #29242f;
+}
+.login button:hover{
+    color: #29242f;
+    background: #efec40;
+}
+.login p {
+    letter-spacing: 2.2px;
+}
+.login p a{
+    color: #0092cc;
+    font-weight: 500;
+    text-decoration: none;
+}
