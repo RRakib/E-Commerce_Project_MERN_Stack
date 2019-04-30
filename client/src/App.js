@@ -4,8 +4,10 @@ import React from 'react';
 import Nav from "./Component/Nav/Nav"
 import Home from "./Component/Home/Home"
 import Login from "./Component/Login/Login"
+import Admin from "./Component/Admin/Admin"
 import Register from "./Component/Register/Register"
 import {BrowserRouter , Route , Switch} from "react-router-dom"
+import PrivateRoute from "./Component/PrivateRoute/PrivateRoute"
 
 function App() {
   return (
@@ -17,8 +19,9 @@ function App() {
         <div className="container">
             <Switch>
               <Route path="/" exact component={Home} />
-              <Route path="/login" exact component={Login} />
-              <Route path="/register" exact component={Register} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <PrivateRoute path="/admin" component={Admin} type="User"/>
             </Switch>
         </div>
       </div>
