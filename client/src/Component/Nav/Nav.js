@@ -9,6 +9,7 @@ const Nav = () => {
             <br />
             <p> <Link to="/login">Login</Link> </p>
             <br />
+            <br />
             <p> <Link to="/register">Register</Link> </p>
         </React.Fragment>
     )

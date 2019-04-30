@@ -1,43 +1,50 @@
 // Imports
 import "./Login.css"
-import React , {Component} from "react"
+import React , {useState} from "react"
 import { Link } from "react-router-dom"
 
-class Login extends Component{
-    constructor(){
-        super();
-        this.state = {
+const Login = () => {
+        const [state , setState] = useState({
             email : "",
             password : ""
+        })
+
+        const handleChange = e => {
+            const {name , value} = e.target
+            setState((prevState) => ({
+                ...prevState,
+                [name] : value
+            }))
         }
-    }
-    render(){
+        const handleSubmit = e => {
+            e.preventDefault();
+        }
+        console.log(state)  
         return(
             <div className="login">
             <h1>Login</h1>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <input 
                         name = "email"
-                        type = "text"
-                        value = {this.state.email}
-                        onChange = {this.handleChange}
+                        type = "email"
+                        value = {state.email}
+                        onChange = {handleChange}
                         placeholder = "Please insert an email"
                     />
                     <br />
                     <input 
                         name = "password"
                         type = "password"
-                        value = {this.state.password}
-                        onChange = {this.handleChange}
+                        value = {state.password}
+                        onChange = {handleChange}
                         placeholder = "Please insert password"
                     />
                     <br />
                     <button>Login</button>
                 </form>
-                <p>Don't Have An Account? <Link to="/register">Register</Link> </p>
+                <p>Don't Have An Account? <Link to="/register"> Register</Link> </p>
             </div>
         )
-    }
 }
 
 export default Login
