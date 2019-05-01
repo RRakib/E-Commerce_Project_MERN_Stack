@@ -1,6 +1,7 @@
 // Imports
 import './App.css';
 import React from 'react';
+import { connect } from "react-redux"
 import Nav from "./Component/Nav/Nav"
 import Home from "./Component/Home/Home"
 import Login from "./Component/Login/Login"
@@ -9,7 +10,10 @@ import Register from "./Component/Register/Register"
 import {BrowserRouter , Route , Switch} from "react-router-dom"
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute"
 
-function App() {
+function App(props) {
+
+
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -21,7 +25,7 @@ function App() {
               <Route path="/" exact component={Home} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
-              <PrivateRoute path="/admin" component={Admin} type="User"/>
+              <PrivateRoute path="/admin" component={Admin} type={props.userReducer.userType}/>
             </Switch>
         </div>
       </div>
@@ -29,4 +33,9 @@ function App() {
   );
 }
 
-export default App;
+// Map State To Props
+const mapStateToProps = (state) => {
+  return state
+}
+
+export default connect(mapStateToProps)(App);

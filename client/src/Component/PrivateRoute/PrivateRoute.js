@@ -4,6 +4,7 @@ import {Route , Redirect} from "react-router-dom"
 
 // Functional Component
 const PrivateRoute = ({component : Component ,type, ...rest}) => {
+    console.log(type)
     return(
         <React.Fragment>
             <Route {...rest} render={props => (

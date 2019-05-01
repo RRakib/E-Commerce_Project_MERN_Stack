@@ -1,25 +1,52 @@
 ::placeholder{
     font-size: 14px;
 }
-.login input{
+.login{
     width: 25%;
+    margin: auto;
+    text-align: left;
+}
+.login h1{
+    text-align: center;
+}
+.login .error{
+    width: 94%;
+    color: red;
+    height: 18px;
+    font-size: 14px;
+    transition: .3s;
+    padding: 7px 12px;
+    border-radius: 5px;
+    background: lightyellow;
+    animation: errors .4s;
+}
+@keyframes errors{
+    from{
+        height: 0;
+    }
+    to{
+        height: 18px;
+    }
+}
+.login input{
+    width: 100%;
     height: 25px;
     border: none;
     outline: none;
     background: none;
     margin-bottom: 10px;
-    padding: 5px 0 5px 10px;
+    padding: 5px 0 5px 5px;
     border-bottom: 2px solid #29242f;
 }
 .login button{
-    width: 26%;
+    width: 102%;
     border:none;
     outline: none;
     color: #eee;
     transition: .3s;
     font-size: 16px;
     margin-top: 10px;
-    padding: 8px 10px;
+    padding: 8px 0;
     border-radius: 2px;
     background: #29242f;
 }
@@ -28,7 +55,7 @@
     background: #efec40;
 }
 .login p {
-    letter-spacing: 2.2px;
+    letter-spacing: 1.75px;
 }
 .login p a{
     color: #0092cc;
