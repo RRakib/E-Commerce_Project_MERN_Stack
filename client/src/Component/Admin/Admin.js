@@ -31,7 +31,8 @@ const Admin = () => {
     }
 
     return(
-        <div>
+        <div className="login">
+            <h1>Welcome Admin</h1>
             <form onSubmit={handleSubmit}>
                 <input 
                     name = "productName"

@@ -20,6 +20,17 @@
     background: lightyellow;
     animation: errors .4s;
 }
+.login .success{
+    width: 94%;
+    color: green;
+    height: 18px;
+    font-size: 14px;
+    transition: .3s;
+    padding: 7px 12px;
+    border-radius: 5px;
+    background: #ceface;
+    animation: errors .4s;
+}
 @keyframes errors{
     from{
         height: 0;

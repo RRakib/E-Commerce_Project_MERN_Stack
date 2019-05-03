@@ -47,11 +47,14 @@ const Login = (props) => {
             })
             
         }
+
         useEffect(()=>{
             return(
-            serverRes.type === "Admin"? props.history.push('/admin') : undefined
+            serverRes.type === "Admin"? props.history.push('/admin') : undefined,
+            serverRes.type === "User"? props.history.push('/') : undefined
             )
         })
+
         // Return
         return(
             <div className="login">

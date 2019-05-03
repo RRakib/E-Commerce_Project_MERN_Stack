@@ -1,4 +1,5 @@
 // Imports
+import axios from "axios"
 import React , {useState} from "react"
 import { Link } from "react-router-dom"
 
@@ -7,6 +8,10 @@ const Register = () => {
             name : "",
             email : "",
             password : ""
+        })
+        const [serverRes , setServerRes] = useState({
+            error : "",
+            success : ""
         })
         const handleChange = e => {
             const {name , value} = e.target
@@ -17,12 +22,28 @@ const Register = () => {
         }
         const handleSubmit = e => {
             e.preventDefault();
+            const regData = {
+                "name" : state.name,
+                "email" : state.email,
+                "password" : state.password
+            }
+            axios.post("/user/register" , regData)
+                 .then(resData => setServerRes(resData.data))
+                 .catch(err => console.log("Error! " + err))
+            
+            setServerRes({
+                name : "",
+                email : "",
+                password : ""
+            })
         }
 
         console.log({state})
         return(
             <div className="login">
             <h1>Register</h1>
+            <p className="error" style={{display : serverRes.error? "block" : "none"}}>{serverRes.error? serverRes.error : null}</p>
+            <p className="success" style={{display : serverRes.success? "block" : "none"}}>{serverRes.success? serverRes.success : null}</p>
                 <form onSubmit={handleSubmit}>
                     <input 
                         name = "name"
