@@ -2,6 +2,7 @@ const express = require("express");
 const key = require("./config/key");
 const mongoose = require("mongoose");
 const UserController = require("./Controller/userController")
+const ProductController = require("./Controller/productController")
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json())
 
 // Assign Route
 app.use("/user" , UserController)
+app.use("/products" , ProductController)
 
 // MongoDB connect
 mongoose.connect(key.mongoURI , {useNewUrlParser : true})
