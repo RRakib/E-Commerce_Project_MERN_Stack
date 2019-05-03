@@ -1,3 +1,4 @@
+const morgan = require("morgan")
 const express = require("express");
 const key = require("./config/key");
 const mongoose = require("mongoose");
@@ -11,6 +12,7 @@ app.use(express.urlencoded({extended : false}));
 app.use(express.json())
 
 // Assign Route
+app.use(morgan("dev"))
 app.use("/user" , UserController)
 app.use("/products" , ProductController)
 
