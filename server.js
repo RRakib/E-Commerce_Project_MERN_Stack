@@ -2,8 +2,8 @@
 const express = require("express");
 const key = require("./config/key");
 const mongoose = require("mongoose");
-const UserController = require("./Controller/userController")
-const ProductController = require("./Controller/productController")
+const UserController = require("./controller/userController")
+const ProductController = require("./controller/productController")
 
 const app = express();
 

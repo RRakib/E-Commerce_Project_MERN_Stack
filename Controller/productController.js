@@ -1,7 +1,7 @@
 // Imports
 const multer = require("multer")
 const express = require("express")
-const Products = require("../Model/productModel")
+const Products = require("../model/productModel")
 const route = express.Router()
 
 // Multer Setup

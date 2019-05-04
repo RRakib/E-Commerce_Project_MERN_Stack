@@ -1,7 +1,7 @@
 // Required Files
 const express = require("express");
 const route = express.Router();
-const Users = require("../Model/loginModel")
+const Users = require("../model/loginModel")
 
 // Register User
 route.post("/register" , (req , res) => {
