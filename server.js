@@ -1,4 +1,4 @@
-const morgan = require("morgan")
+// Required Files
 const express = require("express");
 const key = require("./config/key");
 const mongoose = require("mongoose");
@@ -8,11 +8,11 @@ const ProductController = require("./Controller/productController")
 const app = express();
 
 // Applying Middleware
+app.use("/uploads" , express.static("uploads"))
 app.use(express.urlencoded({extended : false}));
 app.use(express.json())
 
 // Assign Route
-app.use(morgan("dev"))
 app.use("/user" , UserController)
 app.use("/products" , ProductController)
 

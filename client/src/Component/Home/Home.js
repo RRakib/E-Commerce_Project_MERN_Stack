@@ -1,14 +1,14 @@
 // Imports
-import React , {Component} from "react"
+import React , {useState} from "react"
 
-class Home extends Component{
-    render(){
-        return(
-            <div>
-                <h1>E-Commerce</h1>
-            </div>
-        )
-    }
+const Home = () => {
+    return(
+        <div>
+            <h1>E-Commerce</h1>
+            <img src="uploads/1556980382520Maskot.png" alt="img"/>
+        </div>
+    )
 }
+
 
 export default Home;
