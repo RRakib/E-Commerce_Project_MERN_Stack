@@ -6,7 +6,6 @@ const initState = {
 const userReducers = (state = initState , action) => {
     switch(action.type){
         case "LOGIN":
-            console.log(action)
             state = {
                 userType : action.userType
             }

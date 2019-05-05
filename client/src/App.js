@@ -11,7 +11,6 @@ import {BrowserRouter , Route , Switch} from "react-router-dom"
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute"
 
 function App(props) {
-  console.log(props)
   return (
     <BrowserRouter>
       <div className="App">

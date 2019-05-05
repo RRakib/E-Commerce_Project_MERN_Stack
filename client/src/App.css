@@ -4,6 +4,7 @@
   grid-template-columns: 6% 94%;
 }
 .navBar{
+  position: relative;
   padding-top: 235%;
   background: #29242f;
 }

@@ -1,0 +1,27 @@
+.home{
+    width: 85%;
+    margin: auto;
+    text-align: center;
+}
+.home h2{
+    color: #444;
+}
+.home .loading{
+    animation: animate 3s infinite;
+}
+@keyframes animate{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.2)
+    }
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.products img{
+    width: 100%;
+    height: 260px;
+}

@@ -1,8 +1,10 @@
 // Imports
+import "./Home.css"
 import axios from "axios"
+import {connect} from "react-redux"
 import React , {useState , useEffect} from "react"
 
-const Home = () => {
+const Home = (props) => {
     const [products , setProducts] = useState({
         allProducts : [],
         errors : ""
@@ -26,21 +28,29 @@ const Home = () => {
 
     const product = products.allProducts.map(items => {
         return(
-            <div key={items._id}>
+            <div key={items._id} >
                 <img src={items.productImage} alt="product" />
                 <b>{items.name}</b>
                 <p>{items.price}</p>
             </div>
         )
     })
-    console.log(products)
+
     return(
-        <div>
-            <h1>E-Commerce</h1>
-            {product}
+        <div className="home">
+        {props.userReducer.userType? null : <h4 style={{color: "red"}}>Login To Add Product Into The Cart</h4>}
+            <h2><hr />MOST POPULAR IN APRIL 2019<hr /></h2>
+            <div className="products">
+                {products.allProducts.length > 0? product : <h2 className="loading">Loading...</h2>}
+            </div>
         </div>
     )
 }
 
+// Map State To Props
+const mapStateToProps = (state) => {
+    return state
+  }
+  
 
-export default Home;
+export default connect(mapStateToProps)(Home);
