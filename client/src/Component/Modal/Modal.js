@@ -1,11 +1,25 @@
 // Imports
+import "./Modal.css"
 import React from 'react'
 
 // Functional Component
-const Modal = () => {
+const Modal = (props) => {
+  
+    const requireProduct = props.products.filter((items) => items._id === props.serialNo)
+    
+    const display = requireProduct.map((items) => {return(
+        <React.Fragment key={items._id}>
+            <img src={items.productImage} alt="product" />
+            <div className="details">
+                <p><b>Name:</b> {items.name}</p> 
+                <p><b>Price:</b> {items.price}</p>
+            </div>
+        </React.Fragment>
+    )})
+    
   return (
-    <div>
-      <h1>Modal</h1>
+    <div className="modalContainer">
+      {display}
     </div>
   )
 }

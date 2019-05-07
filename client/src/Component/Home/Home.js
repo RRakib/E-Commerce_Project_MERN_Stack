@@ -11,15 +11,25 @@ const Home = (props) => {
     // New State Hook For Functional Component
     const [products , setProducts] = useState({
         allProducts : [],
+        errors : "",
         key : null,
-        errors : ""
+        modal : false
     })
 
     // Click Handle
     const handleClick = (e) => {
         setProducts((prevState) => ({
             ...prevState,
-            key : e
+            key : e,
+            modal : true
+        }))
+    }
+
+    // Click Handle2
+    const handleClick2 = () => {
+        setProducts((prevState) => ({
+            ...prevState,
+            modal : false
         }))
     }
 
@@ -46,29 +56,34 @@ const Home = (props) => {
             <div key={items._id} onClick={() => handleClick(items._id)}>
                 <img src={items.productImage} alt="product" />
                 <b>{items.name}</b>
-                <p>{items.price} {props.userReducer.userType? <i class="fas fa-cart-plus"></i> : null}</p>
+                <p>{items.price} {props.userReducer.userType? <i className="fas fa-cart-plus"></i> : null}</p>
             </div>
         )
     })
 
-    console.log(products.key)
 
     return(
         <div className="home">
             <div className="homeContainer">
+                {/* Cart */}
                 <div className="cart">
                     <Cart />
                 </div>
 
-                <div className="modal">
-                    <Modal />
+                {/* Modal */}
+                <div className="modal" style={{display : products.modal? "block" : "none"}}>
+                    <h3 className="close" onClick={handleClick2}>X</h3>
+                    <Modal products={products.allProducts} serialNo={products.key}/>
                 </div>
 
+                {/* // Login Message */}
                 {props.userReducer.userType? null : <h4 style={{color: "red"}}>Login To Add Product Into The Cart</h4>}
-                    <h2><hr />MOST POPULAR IN APRIL 2019<hr /></h2>
-                    <div className="products">
-                        {products.allProducts.length > 0? product : <h2 className="loading">Loading...</h2>}
-                    </div>
+                
+                <hr /><h2>MOST POPULAR IN APRIL 2019</h2><hr />
+                
+                <div className="products">
+                    {products.allProducts.length > 0? product : <h2 className="loading">Loading...</h2>}
+                </div>
             </div>
         </div>
     )

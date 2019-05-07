@@ -1,0 +1,14 @@
+.modalContainer{
+    width: 50%;
+    color: #333;
+    display: grid;
+    padding: 15px;
+    margin: 5% auto;
+    border-radius: 5px;
+    background: #fff;
+    grid-template-columns: repeat(2,1fr);
+}
+.modalContainer .details{
+    padding: 10px;
+    text-align: left;
+}
