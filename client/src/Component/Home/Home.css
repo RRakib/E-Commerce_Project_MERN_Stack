@@ -1,13 +1,29 @@
 .home{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+.home .homeContainer{
     width: 85%;
     margin: auto;
-    text-align: center;
 }
 .home h2{
     color: #444;
 }
+.home h4{
+    margin: 0 0 10px 0;
+}
 .home .loading{
     animation: animate 3s infinite;
+}
+.home .modal{
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0,0,0,0.3);
 }
 @keyframes animate{
     from{
@@ -21,7 +37,20 @@
     display: grid;
     grid-template-columns: repeat(4,1fr);
 }
+.products div{
+    margin: 1px;
+    transition: .3s;
+}
 .products img{
     width: 100%;
     height: 260px;
+}
+.products div:hover{
+    transform: scale(1.01);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+.products i{
+    padding: 2px 4px;
+    border-radius: 5px;
+    background: #eee;
 }

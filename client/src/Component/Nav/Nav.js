@@ -13,6 +13,9 @@ const Nav = () => {
             <br />
             <br />
             <p> <Link to="/register">Register</Link> </p>
+            <br />
+            <br />
+            <p> <Link to="/contact">Contact</Link> </p>
         </React.Fragment>
     )
 }

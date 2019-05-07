@@ -6,6 +6,7 @@ import Nav from "./Component/Nav/Nav"
 import Home from "./Component/Home/Home"
 import Login from "./Component/Login/Login"
 import Admin from "./Component/Admin/Admin"
+import Contact from "./Component/Contact/Contact"
 import Register from "./Component/Register/Register"
 import {BrowserRouter , Route , Switch} from "react-router-dom"
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute"
@@ -21,6 +22,7 @@ function App(props) {
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/login" component={Login} />
+              <Route path="/contact" component={Contact} />
               <Route path="/register" component={Register} />
               <PrivateRoute path="/admin" component={Admin} type={props.userReducer.userType}/>
             </Switch>
