@@ -11,8 +11,9 @@ const Modal = (props) => {
         <React.Fragment key={items._id}>
             <img src={items.productImage} alt="product" />
             <div className="details">
-                <p><b>Name:</b> {items.name}</p> 
                 <p><b>Price:</b> {items.price}</p>
+                <p><b>Name:</b> {items.name}</p> 
+                <p><b>Details:</b> {items.details}</p> 
             </div>
         </React.Fragment>
     )})

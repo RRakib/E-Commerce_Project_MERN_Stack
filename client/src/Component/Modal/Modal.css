@@ -6,7 +6,19 @@
     margin: 5% auto;
     border-radius: 5px;
     background: #fff;
+    animation: modalAnimation .3s;
     grid-template-columns: repeat(2,1fr);
+}
+.modalContainer img{
+    margin: auto;
+}
+@keyframes modalAnimation{
+    from{
+        transform: scale(.9)
+    }
+    to{
+        transform: scale(1)
+    }
 }
 .modalContainer .details{
     padding: 10px;

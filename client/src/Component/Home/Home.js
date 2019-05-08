@@ -13,6 +13,7 @@ const Home = (props) => {
         allProducts : [],
         errors : "",
         key : null,
+        cart: false,
         modal : false
     })
 
@@ -25,11 +26,20 @@ const Home = (props) => {
         }))
     }
 
-    // Click Handle2
+    // Click Handle2 Modal
     const handleClick2 = () => {
         setProducts((prevState) => ({
             ...prevState,
-            modal : false
+            modal : false,
+            cart : true
+        }))
+    }
+
+    // Click Handle3 Cart
+    const handleClick3 = () => {
+        setProducts((prevState) => ({
+            ...prevState,
+            cart : !prevState.cart
         }))
     }
 
@@ -61,12 +71,18 @@ const Home = (props) => {
         )
     })
 
-
+console.log(products.cart)
     return(
         <div className="home">
             <div className="homeContainer">
+
+                <div className="toggleCart"  onClick={handleClick3} style={{display : props.userReducer.userType? "block" : "none"}}>
+                    <i className="fas fa-shopping-cart" />
+                </div>
+
+
                 {/* Cart */}
-                <div className="cart">
+                <div className="cart" style={{right : products.cart? 0 : -550}}>
                     <Cart />
                 </div>
 

@@ -6,6 +6,7 @@ import React , {useState} from "react"
 // Functional Component
 const Admin = (props) => {
     const [state , setState] = useState({
+        details : "",
         productName : "",
         productPrice : "",
         success : null
@@ -56,7 +57,7 @@ const Admin = (props) => {
         console.log(file)
     return(
         <div className="login">
-            <h1>Welcome Admin</h1>
+            <h2>Enter Product</h2>
             <p className="success" style={{display : state.success? "block" : "none"}}>{state.success? state.success : null}</p>
             <form onSubmit={handleSubmit}>
                 <input 
@@ -73,6 +74,13 @@ const Admin = (props) => {
                     value = {state.productPrice}
                     onChange = {handleChange}
                     placeholder = "Please insert product price"
+                />
+                <textarea 
+                    name = "details"
+                    type = "text"
+                    value = {state.details}
+                    onChange = {handleChange}
+                    placeholder = "Please insert product details"
                 />
                 <input 
                     type = "file"

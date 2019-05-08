@@ -3,9 +3,13 @@
   text-align: center;
   grid-template-columns: 6% 94%;
 }
+.container{
+  width: 100%;
+  height: 100%;
+}
 .navBar{
   position: relative;
-  padding-top: 235%;
+  padding-top: 180%;
   background: #29242f;
 }
 .navBar p{

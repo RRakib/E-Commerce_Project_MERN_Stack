@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 import Nav from "./Component/Nav/Nav"
 import Home from "./Component/Home/Home"
 import Login from "./Component/Login/Login"
-import Admin from "./Component/Admin/Admin"
+import Dashbord from "./Component/Admin/Dashbord"
 import Contact from "./Component/Contact/Contact"
 import Register from "./Component/Register/Register"
 import {BrowserRouter , Route , Switch} from "react-router-dom"
@@ -14,8 +14,8 @@ import PrivateRoute from "./Component/PrivateRoute/PrivateRoute"
 function App(props) {
   return (
     <BrowserRouter>
-      <div className="App">
-        <div className="navBar">
+      <div className="App" style={{display : props.userReducer.userType === "Admin"? "block" : "grid"}}>
+        <div className="navBar" style={{display : props.userReducer.userType === "Admin"? "none" : "block"}}>
           <Nav />
         </div>
         <div className="container">
@@ -24,7 +24,7 @@ function App(props) {
               <Route path="/login" component={Login} />
               <Route path="/contact" component={Contact} />
               <Route path="/register" component={Register} />
-              <PrivateRoute path="/admin" component={Admin} type={props.userReducer.userType}/>
+              <PrivateRoute path="/admin" component={Dashbord} type={props.userReducer.userType}/>
             </Switch>
         </div>
       </div>
