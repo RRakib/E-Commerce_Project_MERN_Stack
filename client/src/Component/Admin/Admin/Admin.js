@@ -1,6 +1,5 @@
 // Imports
 import axios from "axios"
-import { connect } from "react-redux"
 import React , {useState} from "react"
 
 // Functional Component
@@ -50,14 +49,11 @@ const Admin = (props) => {
         })
     }
 
-    const handleClick = () => {
-        props.type(null)
-        props.history.push("/login")
-        }
+
         console.log(file)
     return(
         <div className="login">
-            <h2>Enter Product</h2>
+            <h2>Add Product</h2>
             <p className="success" style={{display : state.success? "block" : "none"}}>{state.success? state.success : null}</p>
             <form onSubmit={handleSubmit}>
                 <input 
@@ -90,16 +86,11 @@ const Admin = (props) => {
                 <br />
                 <button>Add Product</button>
             </form>
-                <button onClick={handleClick}>LogOut</button>
         </div>
     )
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return{
-        type : (type) => {dispatch({type : "LOGIN" , userType : type})}
-    }
-}
+
 
 // Exports
-export default connect(null ,mapDispatchToProps)(Admin)
+export default Admin

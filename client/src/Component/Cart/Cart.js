@@ -5,7 +5,8 @@ import React, {useState} from "react"
 // Functional Component
 const Cart = () => {
     const [mouse, setMouse] = useState({
-        mouseE : false
+        mouseE : false,
+        cart : false
     })
     
     const handleMouse = () => {
@@ -20,9 +21,20 @@ const Cart = () => {
             mouseE : false
         }))
     }
-    
+    const handleClick3 = () => {
+        setMouse((prevState) => ({
+            ...prevState,
+            cart : !prevState.cart
+        }))
+    }
+    console.log(mouse.cart)
     return(
-        <div className="mainCart">
+        <div className="mainCart" style={{right : mouse.cart? 0 : -580}}>
+            <div className="toggleCart"  onClick={handleClick3}>
+                {mouse.cart? <b>X</b> : <i className="fas fa-shopping-cart" />}
+            </div>
+
+
             <h1><i className="fas fa-shopping-cart" /> Cart</h1>
             <div className="line"></div>
             <div className="cartContainer">

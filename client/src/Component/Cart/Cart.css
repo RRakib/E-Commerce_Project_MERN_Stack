@@ -8,8 +8,19 @@ p{
     width: 100%;
     height: 100%;
     color: #ddd;
+    transition: .5s;
     position: relative;
     background: #29242f;
+}
+.mainCart .toggleCart{
+    width: 50px;
+    color: #eee;
+    padding: 15px 5px;
+    position: absolute;
+    top: 0;
+    left: -60px;
+    background: #29242f;
+    border-radius: 0 0 0 5px ;
 }
 .mainCart h1{
     width: 100%;
@@ -62,7 +73,7 @@ p{
     text-align: left;
 }
 .mainCart .subtotalContainer button{
-    width: 90%;
+    width: 92%;
     border: none;
     color: #eee;
     outline: none;

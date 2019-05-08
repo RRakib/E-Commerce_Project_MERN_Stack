@@ -9,16 +9,7 @@
     width: 85%;
     margin: auto;
 }
-.home .homeContainer .toggleCart{
-    width: 50px;
-    color: #eee;
-    padding: 15px 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 0 0 5px 0;
-    background: #29242f;
-}
+
 .home h2 , h4 , hr{
     color: #444;
     margin: 0 0 5px 0;

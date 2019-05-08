@@ -7,6 +7,7 @@ import Home from "./Component/Home/Home"
 import Login from "./Component/Login/Login"
 import Dashbord from "./Component/Admin/Dashbord"
 import Contact from "./Component/Contact/Contact"
+import Notfound from "./Component/NotFound/Notfound"
 import Register from "./Component/Register/Register"
 import {BrowserRouter , Route , Switch} from "react-router-dom"
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute"
@@ -24,6 +25,7 @@ function App(props) {
               <Route path="/login" component={Login} />
               <Route path="/contact" component={Contact} />
               <Route path="/register" component={Register} />
+              <Route component={Notfound} />
               <PrivateRoute path="/admin" component={Dashbord} type={props.userReducer.userType}/>
             </Switch>
         </div>
