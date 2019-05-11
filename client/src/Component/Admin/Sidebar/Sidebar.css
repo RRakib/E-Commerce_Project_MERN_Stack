@@ -1,6 +1,43 @@
 .sidebar{
     width: 100%;
+    color: #eee;
     height: 100%;
+    text-align: left;
+    padding-top: 25px;
+    padding: 20px 20px 0 20px;
     background: #29242f;
+}
+.sidebar h1{
+    margin-bottom: 15px;
+}
+.sidebar hr{
+    margin-bottom: 15px;
+}
+.sidebar p{
+    width: 100%;
+    transition: .3s;
+    padding: 0 0 15px;
+}
+.sidebar p:hover a{
+    color: #eee;
+}
+.sidebar p:hover i{
+    color: #efec40;
+}
+.sidebar a{
+    color: #bbb;
+    text-decoration: none;
+}
+.sidebar button{
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #bbb;
+    margin: 5px 0;
+    padding: 10px 0;
+    font-size: 17px;
+    background: #211c27;
+}
+.sidebar button:hover{
     color: #eee;
 }

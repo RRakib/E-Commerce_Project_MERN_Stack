@@ -53,7 +53,7 @@ const Admin = (props) => {
         console.log(file)
     return(
         <div className="login">
-            <h2>Add Product</h2>
+            <h1>Add Product</h1>
             <p className="success" style={{display : state.success? "block" : "none"}}>{state.success? state.success : null}</p>
             <form onSubmit={handleSubmit}>
                 <input 

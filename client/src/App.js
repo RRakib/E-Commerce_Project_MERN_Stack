@@ -25,7 +25,7 @@ function App(props) {
               <Route path="/login" component={Login} />
               <Route path="/contact" component={Contact} />
               <Route path="/register" component={Register} />
-              <Route component={Notfound} />
+              {props.userReducer.userType? null : <Route component={Notfound} />}
               <PrivateRoute path="/admin" component={Dashbord} type={props.userReducer.userType}/>
             </Switch>
         </div>
